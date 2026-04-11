@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ PEST CONTROL</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-shield-virus"></i>
+                MJ PEST CONTROL
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>  
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>Lindungi Rumah Anda dari <span>Hama & Rayap</span></h1>
+                <p>Jasa pest control profesional dengan metode ramah lingkungan. Kami memberikan garansi kepuasan untuk
+                    setiap layanan yang kami berikan kepada anda.</p>
+                <div class="cta-buttons">
+                    <a href="#layanan" class="btn btn-secondary">
+                        Lihat Layanan
+                    </a>
+                    <a href="#testimonials" class="btn btn-secondary">
+                        Lihat Testimoni
+                    </a>
+                    <a href="#process" class="btn btn-secondary">
+                        Proses Kerja
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Pesan Sekarang
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="1500">0</span>
+                        <span class="stat-label">+ Klien Puas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">+ Tahun Pengalaman</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="24">0</span>
+                        <span class="stat-label">Jam Layanan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="pest.webp">
+            </div>
+        </div>
+    </section>
+    <section class="layanan" id="layanan">
+        <div class="section-header fade in">
+            <h3>layanan yang tersedia</h3>
+            <p>kami menawarkan berbagai layanan pest control untuk memenuhi kebutuhan pelanggan kami</p>
+        </div>
+        <div class="layanan-grid">
+            <div class="layanan-card fade-in" data-service="Pengendalian Rayap">
+                <div class="service-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <h3>Pengendalian Rayap</h3>
+                <p>Sistem pengendalian rayap preventif dan kuratif dengan metode pre-construction dan post-construction.
+                </p>
+                <ul class="layanan-features">
+                    <li><i class="fas fa-check"></i> Garansi 3-5 Tahun</li>
+                    <li><i class="fas fa-check"></i> Metode Soil Treatment</li>
+                    <li><i class="fas fa-check"></i> Free Inspeksi</li>
+                </ul>
+                <button class="btn-pesan" onclick="selectLayanan('Pengendalian Rayap')">
+                    <i class="fas fa-shopping-cart"></i> Pesan Layanan
+                </button>
+            </div>
+
+            <div class="layanan-card">
+                <h3>pembasmian kecoa</h3>
+                <p>kami menawarkan layanan pembasmian kecoa yang aman dan efektif untuk menghilangkan kecoa dari rumah
+                    anda</p>
+                <ul class="layanan-features">
+                    <li><i class="fas fa-check"></i> Garansi 3-5 Tahun</li>
+                    <li><i class="fas fa-check"></i> Metode Soil Treatment</li>
+                    <li><i class="fas fa-check"></i> Free Inspeksi</li>
+                </ul>
+                <button class="btn-pesan" onclick="selectLayanan('Pengendalian Rayap')">
+                    <i class="fas fa-shopping-cart"></i> Pesan Layanan
+                </button>
+            </div>
+            <div class="layanan-card">
+                <h3>pembasmian tikus</h3>
+                <p>kami menyediakan layanan pembasmian tikus yang efektif untuk menghilangkan tikus dari rumah anda dan
+                    mencegah infestasi di masa depan</p>
+                <ul class="layanan-features">
+                    <li><i class="fas fa-check"></i> Garansi 3-5 Tahun</li>
+                    <li><i class="fas fa-check"></i> Metode Soil Treatment</li>
+                    <li><i class="fas fa-check"></i> Free Inspeksi</li>
+                </ul>
+                <button class="btn-pesan" onclick="selectLayanan('Pengendalian Rayap')">
+                    <i class="fas fa-shopping-cart"></i> Pesan Layanan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="section-header fade in">
+                <h3>Proses Kerja Kami</h3>
+                <p>Kami mengikuti proses yang terstruktur untuk memastikan hasil yang efektif dan memuaskan bagi
+                    pelanggan kami</p>
+            </div>
+            <div class="process-steps">
+                <div class="step fade in">
+                    <div class="step-number">1</div>
+                    <h3>1. konsultasi</h3>
+                    <p>kami akan melakukan konsultasi untuk memahami masalah pest control yang anda hadapi dan
+                        memberikan solusi yang tepat</p>
+                </div>
+                <div class="step fade in">
+                    <div class="step-number">2</div>
+                    <h3>2. inspeksi</h3>
+                    <p>kami akan melakukan inspeksi menyeluruh untuk mengidentifikasi jenis dan tingkat infestasi pest
+                        yang ada di rumah anda</p>
+                </div>
+                <div class="step fade in">
+                    <div class="step-number">3</div>
+                    <h3>3. pengobatan</h3>
+                    <p>kami akan menerapkan metode pengobatan yang sesuai untuk menghilangkan pest dari rumah anda</p>
+                </div>
+                <div class="step fade in">
+                    <div class="step-number">4</div>
+                    <h3>4. pencegahan</h3>
+                    <p>kami akan memberikan saran dan tindakan pencegahan untuk mencegah infestasi pest di masa depan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header fade-in">
+            <h2>Apa Kata Klien Kami</h2>
+            <p>Testimoni dari pelanggan yang telah menggunakan jasa EcoPest Pro</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card fade-in">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Sangat puas dengan layanan anti rayapnya. Teknisinya profesional dan
+                    penjelasannya detail. Sudah 2 tahun rumah bebas rayap!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">B</div>
+                    <div class="author-info">
+                        <h4>Budi Santoso</h4>
+                        <p>Rumah Tinggal, Jakarta Selatan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Restoran kami bebas kecoak dan tikus setelah menggunakan jasa EcoPest.
+                    Prosesnya higienis dan tidak mengganggu operasional."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Siti Aminah</h4>
+                        <p>Restoran, Bandung</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"Response cepat dan harga transparan. Untuk pengendalian nyamuk di kantor,
+                    hasilnya efektif sekali. Recommended!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <h4>Andi Wijaya</h4>
+                        <p>Kantor, Surabaya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header fade-in">
+                <h2>Pesan Layanan Sekarang</h2>
+                <p>Isi form di bawah ini dan tim kami akan menghubungi Anda dalam 24 jam</p>
+            </div>
+
+            <div class="form-card fade-in">
+                <div class="alert alert-success" id="alertSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Terima kasih! Pesanan Anda telah terkirim. Kami akan segera menghubungi Anda.</span>
+                </div>
+
+                <div class="alert alert-error" id="alertError">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Maaf, terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung.</span>
+                </div>
+
+                <form id="orderForm" action="https://formsubmit.co/haloh8149@gmail.com" method="POST">
+                    <!-- Konfigurasi FormSubmit -->
+                    <input type="hidden" name="_subject" value="Pesanan Baru EcoPest Pro">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <input type="hidden" name="_autoresponse"
+                        value="Terima kasih telah menghubungi MJ PEST CONTROL. Kami akan segera memproses pesanan Anda.">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nama Lengkap <span>*</span></label>
+                            <input type="text" name="nama" id="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor Telepon <span>*</span></label>
+                            <input type="tel" name="telepon" id="telepon" required placeholder="Contoh: 08123456789">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email <span>*</span></label>
+                            <input type="email" name="email" id="email" required placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Kota/Kecamatan <span>*</span></label>
+                            <input type="text" name="lokasi" id="lokasi" required placeholder="Masukkan lokasi Anda">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Jenis Layanan <span>*</span></label>
+                            <select name="layanan" id="layanan" required onchange="updateHarga()">
+                                <option value="">Pilih Layanan</option>
+                                <option value="Pengendalian Rayap">Pengendalian Rayap</option>
+                                <option value="Pengendalian Tikus">Pengendalian Tikus</option>
+                                <option value="Pengendalian Nyamuk">Pengendalian Nyamuk</option>
+                                <option value="Pengendalian Kecoa">Pengendalian Kecoa</option>
+                                <option value="Pengendalian Semut">Pengendalian Semut</option>
+                                <option value="Paket Lengkap">Paket Lengkap</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tipe Properti <span>*</span></label>
+                            <select name="properti" id="properti" required>
+                                <option value="">Pilih Tipe</option>
+                                <option value="Rumah Tinggal">Rumah Tinggal</option>
+                                <option value="Apartemen">Apartemen</option>
+                                <option value="Kantor">Kantor</option>
+                                <option value="Restoran">Restoran/Cafe</option>
+                                <option value="Gudang">Gudang/Pabrik</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estimasi Luas Area (m²)</label>
+                        <input type="number" name="luas" id="luas" placeholder="Contoh: 100" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Keluhan/Keterangan Tambahan</label>
+                        <textarea name="pesan" id="pesan"
+                            placeholder="Jelaskan keluhan atau permintaan khusus Anda..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit" id="submitBtn">
+                        <span>Kirim Pesanan</span>
+                        <i class="fas fa-paper-plane"></i>
+                        <div class="loading" id="loading"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MJ PEST CONTROL</h3>
+                <p>Solusi pest control profesional dengan metode ramah lingkungan. Lindungi keluarga dan properti Anda
+                    dari ancaman hama.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-phone"></i> 021-1234567</p>
+                <p><i class="fas fa-envelope"></i> info@mjpestcontrol.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MJ PEST CONTROL. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
