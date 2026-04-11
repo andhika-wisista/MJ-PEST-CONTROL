@@ -746,6 +746,33 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column; /* Vertikal/kebawah */
+    align-items: flex-start; /* Rata kiri */
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%; /* Full width di HP */
+    max-width: 300px; /* Batasi maksimal lebar */
+  }
+  .form-container {
+    max-width: 100%; /* Full width */
+    padding: 0rem; /* Padding lebih kecil */
+    font-size: 14px; /* Font lebih kecil */
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container select {
+    padding: 0.75rem; /* Input lebih compact */
+    font-size: 14px;
+  }
+
+  .form-container button {
+    width: 100%; /* Button full width */
+    padding: 0.75rem;
+  }
   .nav-links {
     display: none;
   }
