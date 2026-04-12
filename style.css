@@ -441,13 +441,13 @@ nav {
 }
 
 .step h3 {
-  font-size: 1.2rem;
+  font-size: 25px;
   color: var(--dark-green);
   margin-bottom: 0.5rem;
 }
 
 .step p {
-  font-size: 0.9rem;
+  font-size: 17px;
   color: var(--text-light);
 }
 
@@ -597,14 +597,15 @@ nav {
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 10px;
+  margin-top: -10px;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   color: var(--dark-green);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9rem;
 }
 
@@ -616,7 +617,7 @@ nav {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.875rem;
+  padding: 0.85rem;
   border: 2px solid #e2e8f0;
   border-radius: 10px;
   font-family: "Poppins", sans-serif;
@@ -758,17 +759,17 @@ footer {
   }
   .form-container {
     max-width: 100%; /* Full width */
-    padding: 0rem; /* Padding lebih kecil */
+    padding: 1rem; /* Padding lebih kecil */
     font-size: 14px; /* Font lebih kecil */
   }
 
   .form-container input,
   .form-container textarea,
-  .form-container select {
+  .form-container select,
+  .form-row {
     padding: 0.75rem; /* Input lebih compact */
     font-size: 14px;
   }
-
   .form-container button {
     width: 100%; /* Button full width */
     padding: 0.75rem;
