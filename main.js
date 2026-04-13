@@ -97,39 +97,53 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     btnText.style.display = 'none';
     btnIcon.style.display = 'none';
     
+    // EmailJS Config - GANTI DENGAN DATA KAMU
+    const EMAILJS_PUBLIC_KEY = '0U2ZX4lP8e4wBlTbo';      // Dari EmailJS Account → API Keys
+    const EMAILJS_SERVICE_ID = 'service_8h9q3vg';      // Sudah ada dari tadi
+    const EMAILJS_TEMPLATE_ID = 'template_o0vswgl';    // Dari EmailJS Templates
+
+    // Initialize EmailJS
+    emailjs.init('0U2ZX4lP8e4wBlTbo');
+
     try {
-        const formData = new FormData(this);
-        const response = await fetch(this.action, {
-            method: 'POST',
-            body: formData
-        });
-        
-        if (response.ok) {
-            alertSuccess.style.display = 'flex';
-            alertError.style.display = 'none';
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                alertSuccess.style.display = 'none';
-            }, 5000);
-        } else {
-            throw new Error('Submit failed');
-        }
-    } catch (error) {
-        alertError.style.display = 'flex';
+    // Siapkan data untuk EmailJS
+    const templateParams = {
+        nama: document.getElementById('nama').value,
+        telepon: document.getElementById('telepon').value,
+        email: document.getElementById('email').value,
+        lokasi: document.getElementById('lokasi').value,
+        layanan: document.getElementById('layanan').value,
+        properti: document.getElementById('properti').value,
+        luas: document.getElementById('luas').value || '-',
+        keluhan: document.getElementById('keluhan').value || '-'
+    };
+
+    // Kirim ke EmailJS
+    const response = await emailjs.send('service_8h9q3vg', 'template_o0vswgl', templateParams);
+    
+    console.log('SUCCESS!', response.status, response.text);
+    
+    alertSuccess.style.display = 'flex';
+    alertError.style.display = 'none';
+    this.reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
         alertSuccess.style.display = 'none';
-        
-        // Hide error message after 5 seconds
-        setTimeout(() => {
-            alertError.style.display = 'none';
-        }, 5000);
+    }, 5000);
+    
+    } catch (error) {
+    console.log('FAILED...', error);
+    
+    alertError.style.display = 'flex';
+    alertSuccess.style.display = 'none';
+    
     } finally {
-        // Reset button
-        submitBtn.disabled = false;
-        loading.style.display = 'none';
-        btnText.style.display = 'inline';
-        btnIcon.style.display = 'inline-block';
+    // Reset button state
+    submitBtn.disabled = false;
+    loading.style.display = 'none';
+    btnText.style.display = 'inline';
+    btnIcon.style.display = 'inline';
     }
 });
 
