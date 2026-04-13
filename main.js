@@ -80,6 +80,7 @@ function toggleMobileMenu() {
     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 }
 
+emailjs.init('0U2ZX4lP8e4wBlTbo');
 // Form submission handling
 document.getElementById('orderForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -102,9 +103,6 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     const EMAILJS_SERVICE_ID = 'service_8h9q3vg';      // Sudah ada dari tadi
     const EMAILJS_TEMPLATE_ID = 'template_o0vswgl';    // Dari EmailJS Templates
 
-    // Initialize EmailJS
-    emailjs.init('0U2ZX4lP8e4wBlTbo');
-
     try {
     // Siapkan data untuk EmailJS
     const templateParams = {
@@ -115,7 +113,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
         layanan: document.getElementById('layanan').value,
         properti: document.getElementById('properti').value,
         luas: document.getElementById('luas').value || '-',
-        keluhan: document.getElementById('keluhan').value || '-'
+        keluhan: document.getElementById('pesan').value || '-'
     };
 
     // Kirim ke EmailJS
