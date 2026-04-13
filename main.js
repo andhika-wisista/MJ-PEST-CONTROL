@@ -151,8 +151,8 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
 // Update price estimation based on service
 function updateHarga() {
     const layanan = document.getElementById('layanan').value;
-    // This function can be expanded to show price estimates dynamically
-    console.log('Layanan dipilih:', layanan);
+    // This function can be expanded to show price estimates dynamicallyv
+    console.log('layanan dipilih:', layanan);
 }
 
 // Smooth scroll for navigation links
