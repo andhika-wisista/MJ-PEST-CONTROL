@@ -108,7 +108,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     try {
     // Siapkan data untuk EmailJS
     const templateParams = {
-        nama: document.getElementById('nama').value,
+        nama: document.getElementById('name').value,
         telepon: document.getElementById('telepon').value,
         email: document.getElementById('email').value,
         lokasi: document.getElementById('lokasi').value,
