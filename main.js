@@ -81,6 +81,7 @@ function toggleMobileMenu() {
 }
 
 emailjs.init('0U2ZX4lP8e4wBlTbo');
+
 // Form submission handling
 document.getElementById('orderForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -98,53 +99,55 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     btnText.style.display = 'none';
     btnIcon.style.display = 'none';
     
-    // EmailJS Config - GANTI DENGAN DATA KAMU
-    const EMAILJS_PUBLIC_KEY = '0U2ZX4lP8e4wBlTbo';      // Dari EmailJS Account → API Keys
-    const EMAILJS_SERVICE_ID = 'service_8h9q3vg';      // Sudah ada dari tadi
-    const EMAILJS_TEMPLATE_ID = 'template_o0vswgl';    // Dari EmailJS Templates
+    // EmailJS Config
+    const EMAILJS_SERVICE_ID = 'service_8h9q3vg';
+    const EMAILJS_TEMPLATE_ID = 'template_o0vswgl';
 
     try {
-    // Siapkan data untuk EmailJS
-    const templateParams = {
-        nama: document.getElementById('name').value,
-        telepon: document.getElementById('telepon').value,
-        email: document.getElementById('email').value,
-        lokasi: document.getElementById('lokasi').value,
-        layanan: document.getElementById('layanan').value,
-        properti: document.getElementById('properti').value,
-        luas: document.getElementById('luas').value || '-',
-        keluhan: document.getElementById('pesan').value || '-'
-    };
+        // Siapkan data untuk EmailJS
+        const templateParams = {
+            nama: document.getElementById('name').value,
+            telepon: document.getElementById('telepon').value,
+            email: document.getElementById('email').value,
+            lokasi: document.getElementById('lokasi').value,
+            layanan: document.getElementById('layanan').value,
+            properti: document.getElementById('properti').value,  // Cek: template pakai {{properti}}?
+            luas: document.getElementById('luas').value || '-',
+            keluhan: document.getElementById('pesan').value || '-'
+        };
 
-    // Kirim ke EmailJS
-    const response = await emailjs.send('service_8h9q3vg', 'template_o0vswgl', templateParams);
-    
-    console.log('SUCCESS!', response.status, response.text);
-    
-    alertSuccess.style.display = 'flex';
-    alertError.style.display = 'none';
-    this.reset();
-    
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-        alertSuccess.style.display = 'none';
-    }, 5000);
-    
+        console.log('Sending data:', templateParams);  // Debug log
+
+        // Kirim ke EmailJS
+        const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+        
+        console.log('SUCCESS!', response.status, response.text);
+        
+        alertSuccess.style.display = 'flex';
+        alertError.style.display = 'none';
+        this.reset();
+        
+        setTimeout(() => {
+            alertSuccess.style.display = 'none';
+        }, 5000);
+        
     } catch (error) {
-    console.log('FAILED...', error);
-    
-    alertError.style.display = 'flex';
-    alertSuccess.style.display = 'none';
-    
+        console.log('FAILED...', error);
+        console.log('Error text:', error.text || 'No text');
+        console.log('Error status:', error.status || 'No status');
+        
+        // Tampilkan error detail ke user
+        alertError.innerHTML = `<i class="fas fa-exclamation-circle"></i><span>Error: ${error.text || 'Gagal mengirim'}</span>`;
+        alertError.style.display = 'flex';
+        alertSuccess.style.display = 'none';
+        
     } finally {
-    // Reset button state
-    submitBtn.disabled = false;
-    loading.style.display = 'none';
-    btnText.style.display = 'inline';
-    btnIcon.style.display = 'inline';
+        submitBtn.disabled = false;
+        loading.style.display = 'none';
+        btnText.style.display = 'inline';
+        btnIcon.style.display = 'inline';
     }
 });
-
 // Update price estimation based on service
 function updateHarga() {
     const layanan = document.getElementById('layanan').value;
